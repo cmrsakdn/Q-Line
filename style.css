@@ -1,0 +1,124 @@
+/* GENEL AYARLAR */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f7; /* Rapor zemin rengi [cite: 43] */
+    margin: 0;
+    color: #333;
+}
+
+/* NAVBAR - FLEXBOX KULLANIMI [cite: 22] */
+.navbar {
+    display: flex; /* Elemanları yan yana dizmek için [cite: 34] */
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #233b61; /* Kurumsal ana renk [cite: 41] */
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* HERO BÖLÜMÜ - MOBILE FIRST [cite: 18, 23] */
+.hero {
+    display: flex;
+    flex-direction: column; /* Mobilde alt alta dizilim [cite: 24] */
+    padding: 40px 5%;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+}
+
+/* HİZMETLER - GRID KULLANIMI [cite: 25, 27] */
+.services {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobilde tek sütun [cite: 25] */
+    gap: 20px;
+    padding: 40px 5%;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* GHOST PROTOCOL (TASK 2.2) TASARIMI [cite: 28, 33] */
+.pricing-wrapper {
+    display: flex;
+    flex-direction: column; /* Mobilde kartlar alt alta [cite: 34] */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.price-card {
+    background: white;
+    border: 2px solid #233b61;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.price-card.featured {
+    border-color: #f39c12; /* Vurgu rengi [cite: 42] */
+}
+
+/* FOOTER VE BUTON */
+footer {
+    background: #233b61;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.btn-prices {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* MEDIA QUERIES - RESPONSIVE GEÇİŞLER [cite: 24, 27] */
+
+/* Tablet ve Masaüstü Düzeni */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row; /* Masaüstünde yan yana (Yazı Sol - Resim Sağ) [cite: 23] */
+        text-align: left;
+    }
+
+    .services {
+        grid-template-columns: repeat(3, 1fr); /* Masaüstünde 3 sütun [cite: 25] */
+    }
+
+    .pricing-wrapper {
+        flex-direction: row; /* Fiyat kartlarını yan yana diz [cite: 33] */
+        justify-content: center;
+    }
+    
+    .price-card {
+        flex: 1; /* Kartların eşit genişlikte olması için */
+    }
+}
